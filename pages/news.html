@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>questionmark [[?]] || news</title>
+<link rel="stylesheet" type="text/css" href="mainstyles.css" />
+<script src="../assets/SpryAssets/SpryTooltip.js" type="text/javascript"></script>
+<link href="../assets/SpryAssets/SpryTooltip.css" rel="stylesheet" type="text/css" />
+<link rel="alternate" type="application/rss+xml" title="RSS feed"  href="questionmarkFeed.xml" />
+
+<script type="text/javascript">
+<!--
+	/*	function name:	fontLarge
+		parameters:		none
+		purpose:		Assigns a class name to content div.  The class name has a style which changes the font-size to a larger size.
+		return values:	none
+	*/	
+	function fontLarge() {
+		var content = document.getElementById("content");
+		content.className = "fontLarge"; //assigns class name to div
+	}
+	
+	/*	function name:	fontRegular
+		parameters:		none
+		purpose:		Assigns a class name to content div.  The class name has a style which changes the font-size to 1em.
+		return values:	none
+	*/	
+	function fontRegular() {
+		var content = document.getElementById("content");
+		content.className = "fontRegular"; //assignes class name to div
+	}
+//-->
+</script>
+</head>
+
+<body>
+
+<div id="container">
+
+<div id="header">
+<h1><a href="../index.html">questionmark [[?]]</a></h1>
+<div id="hd"><a href="../index.html" onmouseover="document.banner.src='../assets/headerOver.jpg';" onmouseout="document.banner.src='../assets/header.jpg';"><img src="../assets/header.jpg" alt="questionmark banner" id="banner" name="banner" /></a></div>
+</div>
+
+<div id="nav">
+	<ul>
+		<li><a href="news.html">news</a> | </li>
+		<li><a href="events.html">events</a> | </li>
+		<li><a href="members.html">members</a> | </li>
+		<li><a href="music.html">music</a> | </li>
+		<li><a href="newsletter.html">newsletter</a> | </li>
+		<li><a href="guestbook.html">guestbook</a></li>
+	</ul>
+</div>
+
+<div id="fontChangeButtons">
+	<form id="changingFontSize" method="post" action="">
+		<input type="button" id="styleFontLarge" name="styleFontLarge" value="Large font" onclick="fontLarge()" />
+		<input type="button" id="styleFontRegular" name="styleFontRegular" value="Regular font" onclick="fontRegular()" />
+	</form>
+	
+	<div id="rssLink">
+		<a href="questionmarkFeed.xml" target="_blank"><img src="../assets/feed.gif" alt="rss feed image" /></a>
+		<a href="questionmarkFeed.xml" target="_blank">RSS</a>
+	</div>
+</div>
+
+<div id="content">
+
+<h2>News</h2>
+
+<p><span class="bold">Lastest update!</span><br />
+If you want to see the lyrics to our newest single click the button below!</p>
+
+<form id="viewLyricButton" method="post" action="">
+	<input id="openLyric" name="openLyric" type="button" value="View Lyrics" onclick="openWindow()" />
+</form>
+
+<script type="text/javascript">
+	<!--
+	/*
+		function name:	openWindow
+		parameters:		none
+		purpose:		will open a new browser window with the dimensions of 500px by 350px with a toolbar;
+						the url it access contains lyrics to a song
+		return value:	none
+	*/
+	function openWindow() {
+		window.open("singleLyric.html", "", "toolbar = no, width = 500px, height = 350px");
+	}
+	//-->
+</script>
+
+<div class="deco"><h3>Pervious Update</h3></div>
+
+<div id="imageband"><span id="sprytrigger1"><img src="../assets/qmband.gif" alt="questionmark band" /></span></div>
+
+<p>This website is about the band questionmark also known as [[?]].  To the right is a picture of questionmark.</p>
+<p>On this web site you will find information pretaining to questionmark, such as upcoming gigs, releases, media, and so on.</p>
+<p>Use the naviation at the top to guide you around this website.</p>
+<p>I hope you find this site useful and visit frequently.  You can also sign up to our <a href="pages/newsletter.html">newsletter</a> to get the lastest information e-mailed directly to you.</p>
+<p>This website has just been made recently so please bare with us as we continue to make it as awesome as it can be.</p>
+<div class="deco"><h3>Contacting us</h3></div>
+<p>We have band profiles on <a href="http://www.last.fm/" target="_blank">Last.fm</a>, <a href="http://www.facebook.com/" target="_blank">facebook</a>, <a href="http://www.myspace.com/" target="_blank">myspace</a>, <a href="http://www.twitter.com/" target="_blank">twitter</a>, <a href="http://www.linkedin.com/" target="_blank">linkedin</a>, and <a href="http://www.youtube.com/" target="_blank">youtube</a>.  So look for us there!</p>
+<p>And, please, if you have any questions or just want to say "hi" use the <a href="pages/guestbook.html" target="_self">guestbook</a>.</p>
+<p>Hoping to catch you all soon!  And possibly see all of you at our shows!</p>
+
+<p class="small"><span class="bold">Disclaimer:</span>  This website is developed as an educational project for IT331 course at <a href="http://www.gmu.edu" target="_blank">GMU</a>.  All images on this web site are created my me.<br />To view the CSS used on this web site <a href="mainstyles.css" target="_blank">click here</a>.</p>
+</div>
+
+<div id="footer">
+<p>We are questionmark [[?]]</p>
+</div>
+</div>
+
+<div class="tooltipContent" id="sprytooltip1"><img src="../assets/arrow.gif" class="floatLeft" alt="arrow" /><div class="tooltipInterior">This is an image of questionmark</div></div>
+<script type="text/javascript">
+var sprytooltip1 = new Spry.Widget.Tooltip("sprytooltip1", "#sprytrigger1", {followMouse:true, showDelay:5, useEffect:"fade"});
+</script>
+
+</body>
+
+</html>

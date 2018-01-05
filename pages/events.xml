@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<events>
+	<show id="1">
+		<location>Newton</location>
+		<vender>Vixin</vender>
+		<date>10/5</date>
+		<time>7pm</time>
+	</show>
+	<show id="2">
+		<location>Madison</location>
+		<vender>Mason Square</vender>
+		<date>10/3</date>
+		<time>7pm</time>
+	</show>
+	<show id="3">
+		<location>Gotham</location>
+		<vender>Link Heights</vender>
+		<date>10/2</date>
+		<time>6pm</time>
+	</show>
+	<show id="4">
+		<location>Misty City</location>
+		<vender>Black Cat</vender>
+		<date>9/30</date>
+		<time>7pm</time>
+	</show>
+	<show id="5">
+		<location>Milton Run</location>
+		<vender>Jinxx</vender>
+		<date>7/16</date>
+		<time>8pm</time>
+	</show>
+	<show id="6">
+		<location>Madison</location>
+		<vender>Mason Squre</vender>
+		<date>7/15</date>
+		<time>7pm</time>
+	</show>
+	<show id="7">
+		<location>Misty City</location>
+		<vender>Black Cat</vender>
+		<date>7/13</date>
+		<time>7pm</time>
+	</show>
+	<show id="8">
+		<location>Samston</location>
+		<vender>Sky Blade</vender>
+		<date>7/11</date>
+		<time>8pm</time>
+	</show>
+</events>

@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>questionmark [[?]] || events</title>
+<link rel="stylesheet" type="text/css" href="mainstyles.css" />
+
+<!--CSS file (default YUI Sam Skin) -->
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.9.0/build/calendar/assets/skins/sam/calendar.css" />
+ 
+<!-- Dependencies -->
+<script src="../assets/yui/yahoo-dom-event.js"></script>
+ 
+<!-- Source file -->
+<script src="../assets/yui/calendar-min.js"></script>
+
+<script type="text/javascript">
+	<!--
+	/*
+	script copied from . . . 
+	Website:	www.thebroth.com 
+	Article:	"How the tiles are animated"
+	Category:	The Making of TheBroth
+	Author:		Markus Weicheslbaum
+	Date:		March 15th, 2006
+	
+	sidenotes:  image used is my own that I created soley for this project; 
+				function is initiated once the web page is accessed;
+				bat image is contained in an absolute positioned div to have it fly over text
+	*/
+	var myObj;
+	var maxsteps=550;
+	var step=1;
+	var dx=1;
+
+	function initfly() {
+		myObj=document.getElementById('bat'); 
+		myObj.style.left='0px';
+		myObj.style.top='0px';
+		window.setTimeout(fly,10);	
+	}
+
+	function fly() {  
+		var x=parseInt(myObj.style.left);
+		var y=parseInt(myObj.style.top); 
+		
+		if (step>=0) {
+			if (step<=maxsteps) {x+=dx;step++;} 
+			else {step=step*-1;}
+		} 
+		else {step++;x-=dx;}
+		
+		y=10+10*Math.sin(2*Math.PI/100*x);
+		myObj.style.top=y+'px';
+		myObj.style.left=x+'px'; 
+		
+		window.setTimeout(fly, 10);	
+	} // end function
+	//-->
+	/* End of copied script */
+	
+	
+	/*
+		function name:	scareBat
+		parameters:		none
+		purpose:		Removes image node from page
+		return values:	none
+	*/
+	function scareBat() {
+		var bat = document.getElementById("bat"); //variable holds node of bat image
+		bat.parentNode.removeChild(bat); //removes the node
+	}
+</script>
+
+
+<script src="../assets/SpryAssets/xpath.js" type="text/javascript"></script>
+<script src="../assets/SpryAssets/SpryData.js" type="text/javascript"></script>
+<script type="text/javascript">
+	var dsEvents = new Spry.Data.XMLDataSet("events.xml", "events/show");
+</script>
+
+</head>
+
+<body onload="initfly();">
+
+<div id="container">
+
+<div id="header">
+	<h1><a href="../index.html">questionmark [[?]]</a></h1>
+	<div id="hd"><a href="../index.html" onmouseover="document.banner.src='../assets/headerOver.jpg';" onmouseout="document.banner.src='../assets/header.jpg';"><img src="../assets/header.jpg" alt="questionmark banner" id="banner" name="banner" /></a></div>
+</div>
+
+<div id="nav">
+	<ul>
+		<li><a href="news.html">news</a> | </li>
+		<li><a href="events.html">events</a> | </li>
+		<li><a href="members.html">members</a> | </li>
+		<li><a href="music.html">music</a> | </li>
+		<li><a href="newsletter.html">newsletter</a> | </li>
+		<li><a href="guestbook.html">guestbook</a></li>
+	</ul>
+</div>
+
+<div id="content">
+	<h2>Events</h2>
+	<h3>Up Coming Show!</h3>
+	<p>Come see us on <span class="bold">All Hallows Eve</span> at the Mason Square!  It's a night you don't want to miss!</p>
+	<p class="small">Psst! Does the bat annoy you? Click the button to scare him off.</p>
+	<form id="scareBatButton" method="post" action="">
+		<input type="button" id="scareBatAway" name="scareBatAway" value="Scare bat!" onclick="scareBat()" />
+	</form>
+	<div id="holdingBat"><img src="../assets/bat.gif" alt="image of a bat" id="bat" /></div>
+	
+	<br />
+	<a href="#calendar"></a>
+	<h3>Choose When You Want Us!</h3>
+	<p>Let us know when you want us in your area!  Use the calendar below to let us know what date:</p>
+	<p id="datePicked"></p>
+	<div id="cal1Container"></div>
+	
+	<a href="#calendar" id="resetCal">Reset</a> | <a href="#calendar" id="chooseDate">Choose Date</a>
+	
+	<script type="text/javascript">
+	<!--
+		YAHOO.namespace("calendar");
+	
+		YAHOO.calendar.launch = function() {
+			YAHOO.calendar.cal1 = new YAHOO.widget.Calendar("cal1", "cal1Container"); 
+			YAHOO.calendar.cal1.render(); 
+			
+			document.getElementById("resetCal").onclick = resetCal;
+			document.getElementById("chooseDate").onclick = showSelected;
+		}
+		
+	/*
+		function name:	resetCal
+		parameters:		none
+		purpose:		Resets the choosen value to an empty value in element with ID of "dataPicked"
+		return values:	none
+	*/
+		
+		function resetCal() {
+			document.getElementById("datePicked").innerHTML = "";
+			YAHOO.calendar.cal1.cfg.setProperty("SELECTED", "");
+			YAHOO.calendar.cal1.render();
+		}
+		
+		
+	/*
+		function name:	showSelected
+		parameters:		none
+		purpose:		Displays choosen value from calendar on to element with ID of "datePicked" on page
+		return values:	none
+	*/
+
+		function showSelected() {
+			var pickedDate = YAHOO.calendar.cal1.getSelectedDates()[0];
+			pickedDate =  YAHOO.calendar.cal1.Locale.WEEKDAYS_LONG[pickedDate.getDay()] + ", " + YAHOO.calendar.cal1.Locale.MONTHS_LONG[pickedDate.getMonth()] + " " + pickedDate.getDate() + ".";
+			document.getElementById("datePicked").innerHTML = pickedDate;
+		}
+		
+		YAHOO.util.Event.onDOMReady(YAHOO.calendar.launch); //displays calendar
+	
+	//-->
+	</script>
+	
+	<br class="clear" /><br />
+	<h3>Past Shows!</h3>	
+
+	<div spry:region="dsEvents">
+		<table id="events">
+			<tr class="heading">
+				<th spry:sort="location">Location</th>
+				<th spry:sort="vender">Vender</th>
+				<th spry:sort="date">Date</th>
+				<th spry:sort="time">Time</th>
+			</tr>
+			<tr class="decoRow" spry:repeat="dsEvents" spry:setrow="dsEvents">
+				<td>{location}</td>
+				<td>{vender}</td>
+				<td>{date}</td>
+				<td>{time}</td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+<div id="footer">
+	<p>We are questionmark [[?]]</p>
+</div>
+
+</div>
+</body>
+
+</html>

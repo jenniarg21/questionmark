@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+	<title>questionmark [[?]] || music</title>
+	<link rel="stylesheet" type="text/css" href="mainstyles.css" />
+	<script type="text/javascript" language="javascript">
+	<!--
+		var asyncRequest;
+		
+		/*
+		function name:	getContent
+		parameters:		link address (url)
+		purpose:		Calls on and displays content on current page from another page or displays alert if content from the different page was unable to display
+		return values:	none
+		*/
+		
+		function getContent (url) {
+			try {
+				asyncRequest = new XMLHttpRequest();
+				
+				asyncRequest.onreadystatechange = stateChange;
+				asyncRequest.open('GET', url, true);
+				asyncRequest.send(null);
+			}
+			catch (exception) {
+				alert("Request failed.");
+			}
+		}
+		
+	/*
+		function name:	stateChange
+		parameters:		none
+		purpose:		Displays content from a second page in element with ID of "contentArea"
+		return values:	none
+	*/
+		
+		function stateChange() {
+			if (asyncRequest.readyState == 4 && asyncRequest.status == 200) {
+				document.getElementById("contentArea").innerHTML = asyncRequest.responseText;
+			}
+		}
+		
+	/*
+		function name:	clearContent
+		parameters:		none
+		purpose:		Resets the element with ID of "contentArea" back to default value
+		return values:	none
+	*/
+		
+		function clearContent() {
+			document.getElementById("contentArea").innerHTML = "<p class='cdInfoPara'>[[ hover over CD covers for more info ]]</p>";
+		}
+	//-->
+	</script>
+</head>
+
+<body>
+
+<div id="container">
+
+<div id="header">
+<h1><a href="../index.html">questionmark [[?]]</a></h1>
+<div id="hd"><a href="../index.html" onmouseover="document.banner.src='../assets/headerOver.jpg';" onmouseout="document.banner.src='../assets/header.jpg';"><img src="../assets/header.jpg" alt="questionmark banner" id="banner" name="banner" /></a></div>
+</div>
+
+<div id="nav">
+	<ul>
+		<li><a href="news.html">news</a> | </li>
+		<li><a href="events.html">events</a> | </li>
+		<li><a href="members.html">members</a> | </li>
+		<li><a href="music.html">music</a> | </li>
+		<li><a href="newsletter.html">newsletter</a> | </li>
+		<li><a href="guestbook.html">guestbook</a></li>
+	</ul>
+</div>
+
+<div id="content">
+	<h2>Music</h2>	
+	<p>CD releases are below:</p>
+	<div id="cdHolder">
+		<img src="../assets/spirallingStaircase.jpg" alt="Spiralling Staircase" class="cdImg" onmouseover="getContent('spriallingStaircase.html')" onmouseout="clearContent()" />
+		<img src="../assets/creepyCrawler.jpg" alt="Creepy Crawler" class="cdImg" onmouseover="getContent('creepyCrawler.html')" onmouseout="clearContent()" />
+		<img src="../assets/screamingSirens.jpg" alt="Screaming Sirens" class="cdImg" onmouseover="getContent('screamingSirens.html')" onmouseout="clearContent()" />
+		<img src="../assets/tonicBlast.jpg" alt="Tonic Blast" class="cdImg" onmouseover="getContent('tonicBlast.html')" onmouseout="clearContent()" />
+		<div class="cdBox" id="contentArea"><p class="cdInfoPara">[[ hover over CD covers for more info ]]</p></div>
+		
+		<p>CD's are availble in stores and on iTunes.</p>
+	</div>
+</div>
+
+<div id="footer">
+	<p>We are questionmark [[?]]</p>
+</div>
+</div>
+
+</body>
+
+</html>

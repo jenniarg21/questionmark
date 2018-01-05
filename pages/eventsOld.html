@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>questionmark [[?]] || events</title>
+<link rel="stylesheet" type="text/css" href="mainstyles.css" />
+
+<script type="text/javascript">
+	<!--
+	/*
+	script copied from . . . 
+	Website:	www.thebroth.com 
+	Article:	"How the tiles are animated"
+	Category:	The Making of TheBroth
+	Author:		Markus Weicheslbaum
+	Date:		March 15th, 2006
+	
+	sidenotes:  image used is my own that I created soley for this project; 
+				function is initiated once the web page is accessed;
+				bat image is contained in an absolute positioned div to have it fly over text
+	*/
+	var myObj;
+	var maxsteps=550;
+	var step=1;
+	var dx=1;
+
+	function initfly() {
+		myObj=document.getElementById('bat'); 
+		myObj.style.left='0px';
+		myObj.style.top='0px';
+		window.setTimeout(fly,10);	
+	}
+
+	function fly() {  
+		var x=parseInt(myObj.style.left);
+		var y=parseInt(myObj.style.top); 
+		
+		if (step>=0) {
+			if (step<=maxsteps) {x+=dx;step++;} 
+			else {step=step*-1;}
+		} 
+		else {step++;x-=dx;}
+		
+		y=10+10*Math.sin(2*Math.PI/100*x);
+		myObj.style.top=y+'px';
+		myObj.style.left=x+'px'; 
+		
+		window.setTimeout(fly, 10);	
+	} // end function
+	//-->
+	/* End of copied script */
+	
+	
+	/*
+		function name:	scareBat
+		parameters:		none
+		purpose:		Removes image node from page
+		return values:	none
+	*/
+	function scareBat() {
+		var bat = document.getElementById("bat"); //variable holds node of bat image
+		bat.parentNode.removeChild(bat); //removes the node
+	}
+</script>
+
+</head>
+
+<body onload="initfly();">
+
+<div id="container">
+
+<div id="header">
+<h1><a href="../index.html">questionmark [[?]]</a></h1>
+<div id="hd"><a href="../index.html" onmouseover="document.banner.src='../assets/headerOver.jpg';" onmouseout="document.banner.src='../assets/header.jpg';"><img src="../assets/header.jpg" alt="questionmark banner" id="banner" name="banner" /></a></div>
+</div>
+
+<div id="nav">
+	<ul>
+		<li><a href="news.html">news</a> | </li>
+		<li><a href="events.html">events</a> | </li>
+		<li><a href="members.html">members</a> | </li>
+		<li><a href="newsletter.html">newsletter</a> | </li>
+		<li><a href="guestbook.html">guestbook</a></li>
+	</ul>
+</div>
+
+<div id="content">
+<h2>Events</h2>
+<h3>Up Coming Show!</h3>
+<p>Come see us on <span class="bold">All Hallows Eve</span> at the Mason Square!  It's a night you don't want to miss!</p>
+<p class="small">Psst! Does the bat annoy you? Click the button to scare him off.</p>
+<form id="scareBatButton" method="post" action="">
+	<input type="button" id="scareBatAway" name="scareBatAway" value="Scare bat!" onclick="scareBat()" />
+</form>
+
+<div id="holdingBat"><img src="../assets/bat.gif" alt="image of a bat" id="bat" /></div>
+
+
+<table>
+	<tr>
+		<td colspan="4"><h3>Past Shows!</h3></td>
+	</tr>
+	<tr class="heading">
+		<td>Location</td>
+		<td>Vender</td>
+		<td>Date</td>
+		<td>Time</td>
+	</tr>
+	<tr>
+		<td>Newton</td>
+		<td>Vixion</td>
+		<td>10/5</td>
+		<td>7pm</td>
+	</tr>
+	<tr class="decoRow">
+		<td>Madison</td>
+		<td>Mason Square</td>
+		<td>10/3</td>
+		<td>7pm</td>
+	</tr>
+	<tr>
+		<td>Gotham</td>
+		<td>Link Heights</td>
+		<td>10/2</td>
+		<td>6pm</td>
+	</tr>
+	<tr class="decoRow">
+		<td>Misty City</td>
+		<td>Black Cat</td>
+		<td>9/30</td>
+		<td>7pm</td>
+	</tr>
+	<tr>
+		<td>Milton Run</td>
+		<td>Jinxx</td>
+		<td>7/16</td>
+		<td>8pm</td>
+	</tr>
+	<tr class="decoRow">
+		<td>Madison</td>
+		<td>Mason Square</td>
+		<td>7/15</td>
+		<td>8pm</td>
+	</tr>
+	<tr>
+		<td>Misty City</td>
+		<td>Black Cat</td>
+		<td>7/13</td>
+		<td>7pm</td>
+	</tr>
+	<tr class="decoRow">
+		<td>Samston</td>
+		<td>Sky Blade</td>
+		<td>7/11</td>
+		<td>8pm</td>
+	</tr>
+
+</table>
+
+</div>
+
+<div id="footer">
+<p>We are questionmark [[?]]</p>
+</div>
+</div>
+
+</body>
+
+</html>

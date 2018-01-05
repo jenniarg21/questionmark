@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<rss xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
+	<channel>
+		<title>questionmark's Feed</title>
+		<link>http://mason.gmu.edu/~jargote/IT331/pages/news.html</link>
+		<description>
+			Want to know what the band is up to?  Check it out here!
+		</description>
+		<language>en-us</language>
+
+		<item>
+			<title>Up Coming Shows!</title>
+			<link>http://mason.gmu.edu/~jargote/IT331/pages/events.html</link>
+			<description>
+				Find out when the band is coming near you!
+			</description>
+			<category>Events</category>
+		</item>
+	
+		<item>
+			<title>How It All Started</title>
+			<link>http://mason.gmu.edu/~jargote/IT331/pages/news.html</link>
+			<description>
+				The behind story on how it all started from a small town in Crystal City.
+			</description>
+			<category>Bio</category>
+		</item>
+
+		<item>
+			<title>Eva</title>
+			<link>http://mason.gmu.edu/~jargote/IT331/pages/news.html</link>
+			<description>
+				Ever wondered how Eva decided to team up with Ramone?  Trust me, it wasn't easy.
+			</description>
+			<media:content url="http://mason.gmu.edu/~jargote/IT331/assets/eva.gif" type="image/gif" />
+			<category>Bio</category>
+			<category>Eva</category>
+		</item>
+
+		<item>
+			<title>Birth of questionmark</title>
+			<link>http://mason.gmu.edu/~jargote/IT331/pages/news.html</link>
+			<description>
+				More of Ramone's back story and how he started questionmark.
+			</description>
+			<category>Bio</category>
+			<category>Ramone</category>
+		</item>
+
+		<item>
+			<title>Ramone</title>
+			<link>http://mason.gmu.edu/~jargote/IT331/pages/news.html</link>
+			<description>
+				Ramone's story.
+			</description>
+			<media:content url="http://mason.gmu.edu/~jargote/IT331/assets/ramone.gif" type="image/gif" />
+			<category>Bio</category>
+			<category>Ramone</category>
+		</item>
+
+		<item>
+			<title>questionmark's First Gig!</title>
+			<link>http://mason.gmu.edu/~jargote/IT331/pages/news.html</link>
+			<description>
+				The amazement of the first gig ever!
+			</description>
+			<category>Bio</category>
+			<category>Events</category>
+		</item>
+
+		<item>
+			<title>The Story Behind The Band's Name</title>
+			<link>http://mason.gmu.edu/~jargote/IT331/pages/news.html</link>
+			<description>
+				questionmark . . . ?  Who came up with that name?  And why it stuck.
+			</description>
+			<category>Bio</category>
+		</item>
+
+		<item>
+			<title>The Band's Mascott</title>
+			<link>http://mason.gmu.edu/~jargote/IT331/pages/news.html</link>
+			<description>
+				You'd never guess who our mascott is!  He's a batty little fella.
+			</description>
+			<category>Mascott</category>
+		</item>
+
+		<item>
+			<title>New Single Out!</title>
+			<link>http://mason.gmu.edu/~jargote/IT331/pages/news.html</link>
+			<description>
+				Catch our newest single!
+			</description>
+			<category>Songs</category>
+		</item>
+		
+		<item>
+			<title>Photoshoot!</title>
+			<link>http://mason.gmu.edu/~jargote/IT331/pages/news.html</link>
+			<description>
+				Details on our latest photoshoot.
+			</description>
+			<category>Photoshoot</category>
+		</item>
+	</channel>
+</rss>

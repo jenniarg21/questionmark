@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>questionmark [[?]]</title>
+<link rel="stylesheet" type="text/css" href="pages/mainstyles.css" />
+<script type="text/javascript">
+<!--
+	var ramoneImg; //variable will hold node of image
+	var intervalRamone; //variable will hold setInterval() function
+	
+	/*	function name:	initMoveRamone
+		parameters:		none
+		purpose:		to initiate image node and change its style.  Style change is giving the image a left attribute (which is the starting point of where the image is placed on the page)
+		return values:	none
+	*/
+	function initMoveRamone() {
+		ramoneImg = document.getElementById("ramoneHead"); 
+		ramoneImg.style.left = "75px"; //starting point
+		intervalRamone = window.setInterval("moveRamone()",50);	//calls moveRamone() function
+	}
+	
+	/*	function name:	moveRamone
+		parameters:		none
+		purpose:		Changes image style.  The images left atrribute is made bigger by 1px until it reaches a certain size.
+		return values:	none
+	*/
+	function moveRamone() {  		
+		ramoneImg.style.left = parseInt(ramoneImg.style.left) + 1 + "px"; //increases left attribute by 1px
+		if (ramoneImg.style.left == "175px") {
+			window.clearInterval(intervalRamone); //stops increasing left attribute of image once the certain size is reached
+		}
+	}
+	
+	var evaImg; //variable will hold node of image
+	var intervalEva; //variable will hold setInterval() function
+	
+	/*	function name:	initMoveEva
+		parameters:		none
+		purpose:		to initiate image node and change its style.  Style change is giving the image a left attribute (which is the starting point of where the image is placed on the page)
+		return values:	none
+	*/
+	function initMoveEva() {
+		evaImg = document.getElementById("evaHead"); 
+		evaImg.style.right = "0px";
+		intervalEva = window.setInterval("moveEva()",50);	
+	}
+
+	/*	function name:	moveEva
+		parameters:		none
+		purpose:		Changes image style.  The images left atrribute is made bigger by 1px until it reaches a certain size.
+		return values:	none
+	*/
+	function moveEva() {  		
+		evaImg.style.right = parseInt(evaImg.style.right) + 1 + "px";
+		if (evaImg.style.right == "100px") {
+			window.clearInterval(intervalEva);
+		}
+	}
+
+	
+	
+//-->
+</script>
+
+</head>
+
+<body onload="initMoveRamone(), initMoveEva()">
+<div id="container">
+<div id="box">
+<h1><a href="pages/news.html">questionmark [[?]]</a></h1>
+<p class="small">[[ click above to enter ]]</p>
+
+<script type="text/javascript">
+	<!--
+	var pictures = ["bannerCornerTorn", "bannerTorn", "bannerAllTorn"]; //array holding image file names
+	
+	//displays a random image on web page that is held in pictures array
+	document.write("<a href=\"pages/news.html\"><img src=\"assets/" + pictures[Math.floor(Math.random() * 3)] + ".gif\" class=\"welcome\" alt=\"changing welcome images\" /></a>");
+	//-->
+</script>
+
+<div id="nav">
+	<ul>
+		<li><a href="pages/news.html">news</a> | </li>
+		<li><a href="pages/events.html">events</a> | </li>
+		<li><a href="pages/members.html">members</a> | </li>
+		<li><a href="pages/music.html">music</a> | </li>
+		<li><a href="pages/newsletter.html">newsletter</a> | </li>
+		<li><a href="pages/guestbook.html">guestbook</a></li>
+	</ul>
+</div>
+
+<div id="holdingRamoneHead"><img src="assets/ramoneHead.gif" alt="image of Ramone's head" id="ramoneHead" /></div>
+
+<div id="holdingEvaHead"><img src="assets/evaHead.gif" alt="image of Eva's head" id="evaHead" /></div>
+
+<div id="greeting">
+<script type="text/javascript">
+	<!--
+	var name; //variable that will hold the inputted name of the user
+			
+	//if a cookie exists with the users name already then the first statement will extract the name of the user
+	//otherwise the user will be prompt to enter their name
+	//I use this structure because I have a condition with two possibilies
+	if (document.cookie)
+	{
+		var myCookie = unescape(document.cookie); //variable that will hold the content of the cookie
+		var cookieTokens = myCookie.split("="); //array that will hold the String variable of myCookie in two parts
+		name = cookieTokens[1]; //stores the name of the user on the web page for later use
+	}
+	else
+	{
+		name = window.prompt("Please enter your name"); //askes the user to enter their name in the input field
+		document.cookie = "name=" + escape(name); //stores user's name in the cookie
+	}
+	
+	//prints out greeting to user with their name that they inputted included
+	document.writeln("<p>Greetings, " + name + "! <br />Welcome to the web site of questionmark [[?]]!</p>");
+	//prints out link to change stored name
+	document.writeln("<a href=\"javascript:wrongPerson()\" class=\"small\">Click here if you are not " + name + "</a>");
+	
+	/*
+		function name:  wrongPerson()
+		parameters:		none
+		purpose:		deletes cookie that holds name of user and forces the current page to reload for the user to input a new name
+		return value:	none
+	*/
+	function wrongPerson()
+	{
+		document.cookie = "name=null; expires = Thu, 01-Jan-95 00.00.01 GMT";
+		location.reload();
+	}
+	
+	//-->
+</script>
+</div>
+
+<script type="text/javascript">
+	<!--
+	//prints out the date the page was last modified in the user's locale stored on their harddrive
+	document.write("<p class=\"small\">This web site was last modified on " + document.lastModified.toLocaleString() + "</p>");
+	//-->
+</script>
+</div>
+</div>
+</body>
+
+</html>
